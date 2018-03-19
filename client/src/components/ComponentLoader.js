@@ -12,4 +12,4 @@ const ComponentLoader = ({ loaded, message, children }) => {
     )
 }
 
-export default ComponentLoader;
+export default ComponentLoader;efault ComponentLoader;

@@ -1,57 +1,29 @@
 import React, { Component } from 'react';
-import { Header, Segment, Form, Button } from 'semantic-ui-react';
+import { Header, Card, Description, Button, Grid, Container, Form, Input, Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import { handleLogin } from '../actions/auth';
+import { Link } from 'react-router-dom';
+import { ViewCUPosts } from './ViewCUPosts';
+// import { getPosts, newPost, deletePost, id } from '../actions/posts';
 
-class Login extends Component {
-  state = { email: '', password: '' };
+// import PostForm from './PostForm'
 
-  handleChange = event => {
-    const { id, value } = event.target;
-    this.setState({ [id]: value });
-  }
-
-  handleSubmit = event => {
-    event.preventDefault();
-    const { dispatch, history } = this.props;
-    const { email, password } = this.state;
-    dispatch(handleLogin(email, password, history));
-  }
-
+class Home extends Component {
   render() {
-    const { email, password } = this.state;
     return (
-      <Segment basic>
-        <Header as='h1' textAlign='center'>Login</Header>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Field>
-            <label htmlFor='email'>Email</label>
-            <input
-              required
-              id='email'
-              value={email}
-              placeholder='Email'
-              onChange={this.handleChange}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label htmlFor='password'>Password</label>
-            <input
-              required
-              id='password'
-              value={password}
-              placeholder='Password'
-              type='password'
-              onChange={this.handleChange}
-            />
-          </Form.Field>
-          <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
-          </Segment>
-        </Form>
-      </Segment>
+      <Header as='h1' textAlign='center'>
+        View Your
+        <Link to='/api/posts'> Posts </Link>
+      </Header>
+
+
+
+
+
+
+
+
     );
   }
 }
 
-export default connect()(Login);
+export default Home;

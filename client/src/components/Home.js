@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
-import { Header } from 'semantic-ui-react';
-import axios from 'axios'
+import { Header, Card, Description, Button, Grid, Container, Form, Input, Segment } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { ViewCUPosts } from './ViewCUPosts';
+// import { getPosts, newPost, deletePost, id } from '../actions/posts';
+
+// import PostForm from './PostForm'
 
 class Home extends Component {
-  STATE = { posts: [] }
-
   render() {
     return (
-      <Header as='h1' textAlign='center'>Home Component</Header>
+      <Header as='h1' textAlign='center'>
+        View Your
+        <Link to='/api/posts'> Posts </Link>
+      </Header>
+
+
+
+
+
+
+
+
     );
   }
 }
